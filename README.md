@@ -24,4 +24,4 @@ Take a look at this video:
 This will embed the video from http://www.bilibili.com/video/av2440534/
 
 Notice that: the video id is is all **numbers**,
-the video id is **2440534**, not **av2440534**. Have fun.
+the video id is `2440534`, not `av2440534`, no `av` in video id. Have fun.
