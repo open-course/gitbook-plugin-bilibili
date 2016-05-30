@@ -15,13 +15,25 @@ Add the below to your `book.json` file, then run `gitbook install` :
 
 You can now add bilibili videos to your book using this tag:
 
-```markdown
-Take a look at this video:
-
-{% bilibili %}2440534{% endbilibili %}
 ```
 
-This will embed the video from http://www.bilibili.com/video/av2440534/
+{% bilibili %}2440534{% endbilibili %}
 
-Notice that: the video id is is all **numbers**,
-the video id is `2440534`, not `av2440534`, no `av` in video id. Have fun.
+or
+
+{% bilibili %}av2440534{% endbilibili %}
+```
+
+This will embed the video from http://www.bilibili.com/video/av2440534/.
+
+### Customizable video size?
+
+Yes, from version 0.3.0, you can specify video size with format *`${video} @ ${width} x ${height}`*, for example
+
+```
+{% bilibili %} av2440534@640x480 {% endbilibili %}
+```
+
+will have video size 640 x 480.
+
+Have fun with gitbook and bilibili.
