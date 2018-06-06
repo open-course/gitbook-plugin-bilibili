@@ -27,16 +27,45 @@ or
 
 This will embed the video from http://www.bilibili.com/video/av2440534/.
 
-### Customizable video size?
+### More parameters
 
-Yes, from version 0.4.0, you can specify video size with format *`${video} @ ${width} x ${height}`*, for example
+Full parameters' format *`${video} @ ${section} @ ${width} x ${height} @ ${mode}`*
+
+#### Patameters description
+
+**video**
+
+video is bilibili video's number.
+
+**section**
+
+Indicates which sub video in the specified av number should be played.
+
+section counts from 1.
+
+**width x height**
+
+Specify the size of the player.
+
+Supported from version 0.4.0
+
+**mode**
+
+Specifies the player's mode, supports both flash and html5 modes.
+
+Supported from version 0.4.2
+
+#### Example
+
+Here are some examples.
 
 ```
 
-{% bilibili %} av2440534@640x480 {% endbilibili %}
+{% bilibili %} av2440534@1@640x480@html5 {% endbilibili %}
+
+{% bilibili %} 4950805@2@544x415@flash {% endbilibili %}
 
 ```
 
-will have video size 640 x 480.
-
-Have fun with gitbook and bilibili.
+> If you chose using full parameters mode, you should type all of parameters and don't omit any parameters.
+> Until now, flash player counldn't work correctly. I suggest that you should use html5 player.

@@ -19,25 +19,45 @@ module.exports = {
             process: function (block) {
                 var replaced = block.body.replace('av', '').trim();
                 var video = replaced;
+                var mode = 'html5';
                 var width = 544;
                 var height = 415;
+
+                var section = 1;
+
+                var wrongParameter = false;
+
                 if (replaced.indexOf('@') > 0) {
                     var pair = replaced.split('@');
                     video = pair[0].trim();
-                    var size = pair[1].split('x');
+                    section = pair[1].trim();
+
+                    var size = pair[2].split('x');
                     width = size[0].trim();
                     height = size[1].trim();
+
+                    mode = pair[3].trim();
+                    if (mode != 'flash' && mode != 'html5') {
+                        wrongParameter = true;
+                    }
                 }
 
-                var url = "http://www.bilibili.com/video/av" + video + "/?br";
+                var url = "https://www.bilibili.com/video/av" + video + "/?br";
 
                 if (this.generator != "website") {
                     return '<p><a href="' + url + '">Video link</a></p>';
                 }
 
-                return '<div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;">'
-                    + '<embed height="' + height + '" width="' + width + '" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="http://static.hdslb.com/miniloader.swf" flashvars="page=1&aid='+video+'" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>'
-                    + '</div>';
+                var result = '<div style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;">'
+                if (!wrongParameter) {
+                    if (mode == 'flash') {
+                        result = result + '<embed height="' + height + '" width="' + width + '" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="https://static.hdslb.com/miniloader.swf" flashvars="page=' + section + '&aid=' + video + '" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>'
+                    } else {
+                        result = result + '<iframe height="' + height + '" width="' + width + '" src="https://player.bilibili.com/player.html?aid=' + video + '&page=' + section + '" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>'
+                    }
+                }
+                result = result + '</div>';
+                return result;
             }
         }
     }

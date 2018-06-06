@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-bilibili",
     "description": "Bilibili video integration with video id",
     "main": "index.js",
-    "version": "0.4.1",
+    "version": "0.4.2",
     "engines": {
         "gitbook": ">1.x.x"
     },
