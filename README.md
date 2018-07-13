@@ -37,21 +37,22 @@ Full parameters' format *`${video} @ ${section} @ ${width} x ${height} @ ${mode}
 
 video is bilibili video's number.
 
+**width x height**
+
+Specify the size of the player.
+
+Supported from version 0.4.1
+
 **section**
 
 Indicates which sub video in the specified av number should be played.
 
 section counts from 1.
 
-**width x height**
-
-Specify the size of the player.
-
-Supported from version 0.4.0
-
+Supported from version 0.4.2
 **mode**
 
-Specifies the player's mode, supports both flash and html5 modes.
+Specifies the player's mode, supports both `flash` and `html5` modes.
 
 Supported from version 0.4.2
 
@@ -61,9 +62,9 @@ Here are some examples.
 
 ```
 
-{% bilibili %} av2440534@1@640x480@html5 {% endbilibili %}
+{% bilibili %} av2440534@640x480@1@html5 {% endbilibili %}
 
-{% bilibili %} 4950805@2@544x415@flash {% endbilibili %}
+{% bilibili %} 4950805@544x415@2@flash {% endbilibili %}
 
 ```
 

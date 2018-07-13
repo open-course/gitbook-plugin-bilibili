@@ -22,23 +22,20 @@ module.exports = {
                 var mode = 'html5';
                 var width = 544;
                 var height = 415;
-
                 var section = 1;
-
                 var wrongParameter = false;
-
                 if (replaced.indexOf('@') > 0) {
                     var pair = replaced.split('@');
                     video = pair[0].trim();
-                    section = pair[1].trim();
-
-                    var size = pair[2].split('x');
+                    var size = pair[1].split('x');
                     width = size[0].trim();
                     height = size[1].trim();
-
-                    mode = pair[3].trim();
-                    if (mode != 'flash' && mode != 'html5') {
+                    if(pair.size > 2) {
+                      section = pair[2].trim();
+                      mode = pair[3].trim();
+                      if (mode != 'flash' && mode != 'html5') {
                         wrongParameter = true;
+                      }
                     }
                 }
 
