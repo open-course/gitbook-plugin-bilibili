@@ -41,7 +41,7 @@ video is bilibili video's number.
 
 Specify the size of the player.
 
-Supported from version 0.4.1
+Supported from version 0.4.x
 
 **section**
 
@@ -49,13 +49,13 @@ Indicates which sub video in the specified av number should be played.
 
 section counts from 1.
 
-Supported from version 0.4.2
+Supported from version 0.5.0
 
 **mode**
 
 Specifies the player's mode, supports both `flash` and `html5` modes.
 
-Supported from version 0.4.2
+Supported from version 0.5.0
 
 #### Example
 
