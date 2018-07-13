@@ -29,7 +29,7 @@ This will embed the video from http://www.bilibili.com/video/av2440534/.
 
 ### More parameters
 
-Full parameters' format *`${video} @ ${section} @ ${width} x ${height} @ ${mode}`*
+Full parameters' format *`${video} @ ${width} x ${height} @ ${section} @ ${mode}`*
 
 #### Patameters description
 
@@ -50,6 +50,7 @@ Indicates which sub video in the specified av number should be played.
 section counts from 1.
 
 Supported from version 0.4.2
+
 **mode**
 
 Specifies the player's mode, supports both `flash` and `html5` modes.
@@ -61,10 +62,15 @@ Supported from version 0.4.2
 Here are some examples.
 
 ```
+{% bilibili %} 2440534 {% endbilibili %}
+
+{% bilibili %} av2440534 {% endbilibili %}
+
+{% bilibili %} av2440534@640x480 {% endbilibili %}
 
 {% bilibili %} av2440534@640x480@1@html5 {% endbilibili %}
 
-{% bilibili %} 4950805@544x415@2@flash {% endbilibili %}
+{% bilibili %} av4950805@544x415@2@flash {% endbilibili %}
 
 ```
 
