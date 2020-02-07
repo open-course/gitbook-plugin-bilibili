@@ -32,10 +32,10 @@ This will embed the video from http://www.bilibili.com/video/av2440534/.
 Full parameters' format
 
 ```
-${av} [# ${page}] [@ ${width} x ${height}]
+{av} [#{page}] [@{width}x{height}]
 ```
 
-#### Patameters description
+#### Parameters description
 
 **av**
 
