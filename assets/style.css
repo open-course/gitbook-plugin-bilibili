@@ -1,0 +1,11 @@
+.bilibili {
+    position: relative;
+    padding-bottom: 65%;
+    margin-bottom: .85em;
+}
+.bilibili iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
